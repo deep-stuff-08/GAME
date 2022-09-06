@@ -1,2 +1,2 @@
 # GAME
-game - GPU Accelerated Math Engine
+GAME - GPU Accelerated Math Engine
