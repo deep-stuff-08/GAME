@@ -16,10 +16,6 @@ opencl_context::opencl_context() : context(){
 	cout<<getKernelFromProgram(&this->context, "div", &this->kernelList[DIV_KERNEL]);
 }
 
-context::~context() {
-	
-}
-
 memobj opencl_context::createBuffer(size_t size, void* data) {
 	memobj m;
 	cl_int err;

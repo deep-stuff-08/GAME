@@ -9,11 +9,11 @@ engine::engine(GAME_config_platform platform) {
 	if(platform == GAME_DEFAULT || platform == GAME_OPENCL) {
 		this->platform = platform;
 		this->current_context = new opencl_context();
-	// } else if(platform == GAME_CUDA) {
-	// 	this->platform = platform;
-	// 	this->current_context = new cuda_context();
+	} else if(platform == GAME_CUDA) {
+		this->platform = platform;
+		this->current_context = new cuda_context();
 	} else {
-
+		this->current_context = nullptr;
 	}
 }
 
@@ -43,4 +43,8 @@ vector<float> engine::getDataObject(memobj m) {
 
 engine::~engine() {
 	delete this->current_context;
+}
+
+context::~context() {
+	
 }
