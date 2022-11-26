@@ -3,7 +3,6 @@
 #include"GAME.h"
 
 namespace GAME {
-	class cuda_context : GAME::context {
-		void needToFindCommonFunctionButNotFoundYet();
+	class cuda_context : public GAME::context {
 	};
 }

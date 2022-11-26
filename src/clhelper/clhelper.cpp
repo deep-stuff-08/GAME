@@ -9,7 +9,7 @@ using namespace std;
 
 #define CheckErr if(err != CL_SUCCESS) errorString<<"OpenCL Error: "<<err<<" at Line: "<<__LINE__<<"\n"
 
-string initOpenCLContext(glclContext_dl *context, int platformNo, int deviceNo) {
+string initOpenCLContext(clContext_dl *context, int platformNo, int deviceNo) {
 	cl_platform_id *platforms;
 	cl_device_id *devices;
 	cl_uint num;
@@ -43,7 +43,7 @@ string initOpenCLContext(glclContext_dl *context, int platformNo, int deviceNo) 
 	return errorString.str();
 }
 
-string compilePrograms(glclContext_dl *context, vector<string> programNames) {
+string compilePrograms(clContext_dl *context, vector<string> programNames) {
 	stringstream errorString;
 	cl_int err;
 	cl_uint num;
@@ -78,7 +78,7 @@ string compilePrograms(glclContext_dl *context, vector<string> programNames) {
 	return errorString.str();
 }
 
-string getKernelFromProgram(glclContext_dl *context, std::string name, cl_kernel *ret) {
+string getKernelFromProgram(clContext_dl *context, std::string name, cl_kernel *ret) {
 	stringstream errorString;
 	cl_int err;
 	size_t size;
@@ -105,7 +105,7 @@ string setKernelParameters(cl_kernel kernel, vector<glclKernelParamater_dl> kern
 	return errorString.str();
 }
 
-string runCLKernel(glclContext_dl *context, cl_kernel kernel, cl_uint workDim, size_t *globalSize, size_t *localSize, vector<cl_mem> globjects) {
+string runCLKernel(clContext_dl *context, cl_kernel kernel, cl_uint workDim, size_t *globalSize, size_t *localSize, vector<cl_mem> globjects) {
 	stringstream errorString;
 	cl_int err;
 	err = clEnqueueNDRangeKernel(context->cmdQueue, kernel, workDim, NULL, globalSize, localSize, 0, NULL, NULL); CheckErr;
