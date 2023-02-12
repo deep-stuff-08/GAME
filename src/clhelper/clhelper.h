@@ -5,7 +5,7 @@
 #include<CL/cl.h>
 #include<vector>
 #include<iostream>
-#include<GL/gl.h>
+//#include<GL/gl.h>
 
 #define param(p, x) {p, &x, sizeof(x)}
 
