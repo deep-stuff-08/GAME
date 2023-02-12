@@ -1,0 +1,11 @@
+Creating Log File.
+In WM_CREATE Message.
+Set Focus True.
+Selected GPU = NVIDIA GeForce RTX 2070 SUPER
+In ToogleFullscreen.
+width 512 height 512
+width 1024 height 1024
+width 2048 height 2048
+width 4096 height 4096
+Sending WM_CLOSE.
+Set Focus False.
